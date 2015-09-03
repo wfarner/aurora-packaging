@@ -26,7 +26,7 @@ The scheduler and observer will automatically start when installed.
     task = SequentialTask(
       processes = [Process(name = 'hello', cmdline = 'echo hello')],
       resources = Resources(cpu = 1.0, ram = 128*MB, disk = 128*MB))
-    
+
     jobs = [Service(
       task = task, cluster = 'example', role = 'www-data', environment = 'prod', name = 'hello')]" > hello_world.aurora
     aurora job create example/www-data/prod/hello hello_world.aurora
